@@ -1,0 +1,90 @@
+.titlelg {
+  font-size: var(--text2xl);
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.titlemd {
+  font-size: var(--textxl);
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.titlesm {
+  font-size: var(--text2lg);
+  color: var(--text-title);
+}
+
+.titlexs {
+  font-size: var(--text2md);
+  color: var(--text-title);
+}
+
+.subtitle {
+  font-size: var(--text2lg);
+  line-height: 200%;
+  font-weight: 500;
+  color: var(--text-body);
+
+  @media (width <= 376px) {
+    font-size: 1rem;
+    line-height: 140%;
+  }
+}
+
+.bodylg {
+  font-size: var(--textlg);
+  line-height: 140%;
+  font-weight: 600;
+  color: var(--text-body);
+
+  @media (width <= 376px) {
+    font-weight: 400;
+  }
+}
+
+.bodymd {
+  font-size: var(--text2md);
+  line-height: 140%;
+  font-weight: 600;
+  color: var(--text-body);
+
+  @media (width <= 376px) {
+    font-size: var(--text-md);
+    font-weight: 400;
+  }
+}
+
+.bodysm {
+  font-size: var(--textmd);
+  line-height: 140%;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.bodyxs {
+  font-size: var(--textsm);
+  line-height: 140%;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.button {
+  font-size: var(--textmd);
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.link {
+  font-size: var(--textmd);
+  font-weight: 500;
+  color: var(--blue-light);
+}
+
+.tag {
+  font-size: var(--textxs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+  color: var(--text-body);
+}
