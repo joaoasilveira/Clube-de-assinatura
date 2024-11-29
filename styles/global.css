@@ -35,6 +35,22 @@
   --shape-background: #00050A;
 }
 
+body {
+  max-width: 100%;
+  width: 100%;
+  background-color: var(--shape-background);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
 @media (width <= 376px) {
   :root {
     --text2xl: 1.75rem;

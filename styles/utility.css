@@ -35,7 +35,7 @@
 .bodylg {
   font-size: var(--textlg);
   line-height: 140%;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-body);
 
   @media (width <= 376px) {

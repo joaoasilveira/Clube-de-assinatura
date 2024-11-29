@@ -1,0 +1,307 @@
+#hero {
+  & .hero-bg {
+    border: 1px solid var(--shape-background);
+    width: 100%; /* largura da div */
+    height: auto; /* altura da div */
+    background-image: url(../assets/images/hero-background.png); /* caminho da imagem */
+    background-size: cover; /* ajusta o tamanho da imagem */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat; /* impede que a imagem se repita */
+
+    animation-name: appearBg;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+
+    & nav {
+      margin-inline: 160px;
+      margin-top: 56px;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      @media (width <= 376px) {
+        margin-top: 1.25rem;
+        margin-inline: 1.25rem;
+      }
+      
+      & .hero-logo {
+        width: 230px; /* largura da div */
+        height: 58px; /* altura da div */
+        background-image: url(../assets/icons/logo-horizontal.svg); /* caminho da imagem */
+        background-size: cover; /* ajusta o tamanho da imagem */
+        background-position: center; /* centraliza a imagem */
+        background-repeat: no-repeat; /* impede que a imagem se repita */
+        
+        @media (width <= 376px) {
+          width: 64px; /* largura da div */
+          height: 48px; /* altura da div */
+          background-image: url(../assets/icons/logo-symbol.svg); /* caminho da imagem */
+        }
+      }
+
+      & .button {
+        width: 89px;
+        height: 40px;
+        background: var(--pink-dark);
+        border-radius: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+    
+          &:hover::before {
+            scale: 1;
+          }
+     
+          &::before {
+            content: "";
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+            background-color: var(--pink-base);
+    
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+    
+            scale: 0;
+            transition: scale 400ms;
+          }
+
+          & span {
+            z-index: 1;
+          }
+      }
+    }
+  
+    & .hero-title {
+      height: auto;
+      margin-top: 164px;
+      margin-inline: 392px;
+      margin-bottom: 470px;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      
+      text-align: center;
+
+      & h1 {
+        animation-name: appearTitle;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in;
+      }
+
+      & p {
+        animation-name: appearSubtitle;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-timing-function: ease;
+      }
+
+      @media (width <= 376px) {
+        width: 335px;
+        margin-top: 3rem;
+        margin-inline: 1.25rem;
+        margin-bottom: 193px;
+        gap: 1rem;
+      }
+    }
+  }
+  
+  & .hero-section {
+    margin-top: 96px;
+    margin-inline: 110px;
+    margin-bottom: 80px;
+    text-align: center;
+    height: 400px;
+    padding-inline: 2rem;
+    padding-top: 114px;
+    padding-bottom: 158px;
+    border: 2px solid white;
+
+    position: relative;
+
+    @media (width <= 376px) {
+      margin-top: 32px;
+      margin-inline: 0;
+      margin-bottom: 0;
+      height: 251px;
+      padding-inline: 1.25rem;
+      padding-block: 81.5px;
+    }
+
+    & .hero-icon {
+      position: absolute;
+      width: 88px;
+      height: 88px;
+
+      @media (width <= 376px) {
+        width: 40px;
+        height: 40px;
+      }
+      
+      &:nth-child(1) {
+        animation-timeline: view(45% 25%);
+        animation-name: iconAppear;
+        animation-fill-mode: both;
+        bottom: 15%;
+        left: 5%;
+      }
+      &:nth-child(2) {
+        animation-timeline: view(55% 35%);
+        animation-name: iconAppear;
+        animation-fill-mode: both;
+        top: 10%;
+        left: 45%;
+      }
+      &:nth-child(3) {
+        animation-timeline: view(25% 45%);
+        animation-name: iconAppear;
+        animation-fill-mode: both;
+        bottom: 15%;
+        right: 5%;
+      }
+    }
+
+    & p {
+      & strong:nth-child(1) {
+        animation-name: textColor;
+        animation-fill-mode: both;
+        animation-timeline: view(40% 30%);
+      }
+      & strong:nth-child(2) {
+        animation-name: strongColor;
+        animation-fill-mode: both;
+        animation-timeline: view(40% 30%);
+      }
+
+      & strong:nth-child(3) {
+        animation-name: textColor;
+        animation-fill-mode: both;
+        animation-timeline: view(30% 40%);
+      }
+      & strong:nth-child(4) {
+        animation-name: strongColor;
+        animation-fill-mode: both;
+        animation-timeline: view(30% 40%);
+      }
+
+      & strong:nth-child(5) {
+        animation-name: textColor;
+        animation-fill-mode: both;
+        animation-timeline: view(1% 60%);
+      }
+      & strong:nth-child(6) {
+        animation-name: strongColor;
+        animation-fill-mode: both;
+        animation-timeline: view(1% 60%);
+      }
+    }
+  }
+}
+
+@keyframes strongColor {
+  0% {
+    color: var(--text-body);
+  }
+  50% {
+    color: var(--blue-light);
+  }
+  100% {
+    color: var(--text-body);
+  }
+}
+
+@keyframes textColor {
+  0% {
+    color: var(--text-body);
+    font-weight: 400;
+  }
+  50% {
+    color: var(--text-title);
+    font-weight: 500;
+  }
+  100% {
+    color: var(--text-body);
+    font-weight: 400;
+  }
+}
+
+@keyframes iconAppear {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1;
+    
+  }
+
+  100% {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+@keyframes iconDisappear {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+
+  to {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+@keyframes appearBg {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearTitle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearSubtitle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
