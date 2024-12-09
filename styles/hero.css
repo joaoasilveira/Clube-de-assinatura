@@ -114,18 +114,14 @@
       }
     }
   }
-  
   & .hero-section {
     margin-top: 96px;
-    margin-inline: 110px;
     margin-bottom: 80px;
     text-align: center;
     height: 400px;
     padding-inline: 2rem;
     padding-top: 114px;
     padding-bottom: 158px;
-    border: 2px solid white;
-
     position: relative;
 
     @media (width <= 376px) {
@@ -137,100 +133,119 @@
       padding-block: 81.5px;
     }
 
+    & p.subtitle {
+      & strong {
+        opacity: 0.5;
+      }
+    }
+
     & .hero-icon {
       position: absolute;
       width: 88px;
       height: 88px;
+      scale: 0;
+      opacity: 0;
 
       @media (width <= 376px) {
         width: 40px;
         height: 40px;
       }
-      
+
+      transition-property: transform;
+      transition-duration:0.5s;
+
       &:nth-child(1) {
-        animation-timeline: view(45% 25%);
-        animation-name: iconAppear;
-        animation-fill-mode: both;
         bottom: 15%;
         left: 5%;
       }
       &:nth-child(2) {
-        animation-timeline: view(55% 35%);
-        animation-name: iconAppear;
-        animation-fill-mode: both;
         top: 10%;
         left: 45%;
       }
       &:nth-child(3) {
-        animation-timeline: view(25% 45%);
-        animation-name: iconAppear;
-        animation-fill-mode: both;
         bottom: 15%;
         right: 5%;
       }
+
+      &:hover {
+        transform: rotate(20deg);
+      }
+
     }
 
-    & p {
-      & strong:nth-child(1) {
-        animation-name: textColor;
-        animation-fill-mode: both;
-        animation-timeline: view(40% 30%);
-      }
-      & strong:nth-child(2) {
-        animation-name: strongColor;
-        animation-fill-mode: both;
-        animation-timeline: view(40% 30%);
-      }
-
-      & strong:nth-child(3) {
-        animation-name: textColor;
-        animation-fill-mode: both;
-        animation-timeline: view(30% 40%);
-      }
-      & strong:nth-child(4) {
-        animation-name: strongColor;
-        animation-fill-mode: both;
-        animation-timeline: view(30% 40%);
+    &:hover {
+      & .hero-icon {
+        &:nth-child(1) {
+          animation-name: iconAppear;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+          animation-delay: .5s;
+        }
+        &:nth-child(2) {
+          animation-name: iconAppear;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+        }
+        &:nth-child(3) {
+          animation-name: iconAppear;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+          animation-delay: 1s;
+        }
       }
 
-      & strong:nth-child(5) {
-        animation-name: textColor;
-        animation-fill-mode: both;
-        animation-timeline: view(1% 60%);
-      }
-      & strong:nth-child(6) {
-        animation-name: strongColor;
-        animation-fill-mode: both;
-        animation-timeline: view(1% 60%);
+      & p {
+        & strong:nth-child(1) {
+          animation-name: textColor;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+        }
+        & strong:nth-child(2) {
+          animation-name: strongColor;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+        }
+  
+        & strong:nth-child(3) {
+          animation-name: textColor;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+          animation-delay: .5s;
+        }
+        & strong:nth-child(4) {
+          animation-name: strongColor;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+          animation-delay: .5s;
+        }
+  
+        & strong:nth-child(5) {
+          animation-name: textColor;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+          animation-delay: 1s;
+        }
+        & strong:nth-child(6) {
+          animation-name: strongColor;
+          animation-fill-mode: forwards;
+          animation-duration: .5s;
+          animation-delay: 1s;
+        }
       }
     }
   }
 }
 
-@keyframes strongColor {
-  0% {
-    color: var(--text-body);
-  }
-  50% {
-    color: var(--blue-light);
-  }
+@keyframes strongColor {  
   100% {
-    color: var(--text-body);
+    color: var(--blue-light);
+    opacity: 1;
   }
 }
 
 @keyframes textColor {
-  0% {
-    color: var(--text-body);
-    font-weight: 400;
-  }
-  50% {
-    color: var(--text-title);
-    font-weight: 500;
-  }
   100% {
-    color: var(--text-body);
-    font-weight: 400;
+    opacity: 1;
   }
 }
 
@@ -240,27 +255,9 @@
     scale: 0;
   }
 
-  50% {
-    opacity: 1;
-    scale: 1;
-    
-  }
-
   100% {
-    opacity: 0;
-    scale: 0;
-  }
-}
-
-@keyframes iconDisappear {
-  from {
     opacity: 1;
     scale: 1;
-  }
-
-  to {
-    opacity: 0;
-    scale: 0;
   }
 }
 

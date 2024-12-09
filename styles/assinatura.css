@@ -1,0 +1,237 @@
+#assinatura {
+  border: 10px solid blue;
+  
+  & p.titlesm {
+    text-align: center;
+    margin-top: 194px;
+    margin-bottom: 56px;
+
+    @media (width <= 376px) {
+      margin-top: 104px;
+      margin-bottom: 48px;
+    }
+  }
+
+  & .pricing-table {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 302px;
+
+    @media (width > 376px) {
+      padding-block: 110px;
+      justify-content: center;
+
+      &:hover {
+        & .card:nth-child(1) {
+          transform: translateX(5%) translateY(10%) rotate(-6deg);
+        }
+        & .card:nth-child(3) {
+          transform: translateX(-5%) translateY(10%) rotate(6deg);
+        }
+      }
+    }
+
+    @media (width <= 376px) {
+      margin-bottom: 104px;
+      overflow: scroll;
+      gap: 16px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    & .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding-top: 32px;
+      padding-bottom: 28px;
+      padding-inline: 32px;
+
+      border: 1px solid var(--blue-dark);
+      border-radius: 24px;
+      background-color: var(--shape-base);
+
+      height: 416px;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--shape-hover);
+
+        @media (width > 376px) {
+
+        &:nth-child(1) {
+          transform: translateX(0) translateY(5%) rotate(-6deg);
+          z-index: 2;
+          & img.vector1 {
+            transition-property: transform;
+            transition-duration: .5s;
+            transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+          }
+          & img.vector2 {
+            transition-property: transform;
+            transition-duration: .5s;
+            transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+          }
+        }
+
+        &:nth-child(2) {
+          transform:translateY(-5%);
+
+        }
+
+        &:nth-child(3) {
+          transform: translateX(0) translateY(5%) rotate(6deg);
+          z-index: 2;
+          & img.vector1 {
+            transition-property: transform;
+            transition-duration: .5s;
+            transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+          }
+          & img.vector2 {
+            transition-property: transform;
+            transition-duration: .5s;
+            transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+          }
+        }
+        }
+      }
+
+      @media (width <= 376px) {
+        padding-inline: 16px;
+      }
+
+      & .popular {
+        position: absolute;
+        right: 24.43px;
+        top: 23.91px;
+        background-color: var(--shape-stroke);
+        padding: 9px 20px;
+        border-radius: 999px;
+      }
+      
+      & .header {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 272px;
+
+        & p.titlexs {
+          font-weight: 700;
+        }
+
+        & .price {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+
+      & .details {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        & .items {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          & .item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            & svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+
+        & .button {
+          padding-block: 12px;
+          border-radius: 8px;
+          text-align: center;
+          background-color: var(--blue-dark);
+        }
+      }
+    }
+
+    & .card:nth-child(1) {
+      @media (width > 376px) {
+        transition-property: transform;
+        transition-duration: 1s;
+        transform: translateX(105%);
+        z-index: 0;
+      }
+
+      & img.vector1 {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        top: -7%;
+        left: -7%;
+        transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+      }
+      & img.vector2 {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        top: 3%;
+        left: -8%;
+        transform: matrix(0.99, -0.14, -0.14, -0.99, 0, 0);
+      }
+    }
+
+    & .card:nth-child(2) {
+      z-index: 1;
+
+      @media (width > 376px) {
+        transition-property: transform;
+        transition-duration: 1s;
+      }
+
+      & .details {
+        & .button {
+          background-color: var(--pink-dark);
+        }
+      }
+
+      & img {
+        position: absolute;
+        width: 45px;
+        height: 50px;
+        left: 32px;
+        top: -50.19px;
+      }
+    }
+
+    & .card:nth-child(3) {
+      @media (width > 376px) {
+        transition-property: transform;
+        transition-duration: 1s;
+        transform: translateX(-105%);
+        z-index: 0;
+      }
+
+      & img.vector1 {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        bottom: -7%;
+        right: -7%;
+        transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+      }
+      & img.vector2 {
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        bottom: -7%;
+        right: 3%;
+        transform: matrix(0.99, 0.14, 0.14, -0.99, 0, 0);
+      }
+    }
+  }
+}
