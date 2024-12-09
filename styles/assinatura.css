@@ -48,7 +48,7 @@
       padding-bottom: 28px;
       padding-inline: 32px;
 
-      border: 1px solid var(--blue-dark);
+      border: 2px solid var(--shape-hover);
       border-radius: 24px;
       background-color: var(--shape-base);
 
