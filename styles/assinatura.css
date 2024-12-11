@@ -1,6 +1,4 @@
-#assinatura {
-  border: 10px solid blue;
-  
+#assinatura {  
   & p.titlesm {
     text-align: center;
     margin-top: 194px;
@@ -15,7 +13,7 @@
   & .pricing-table {
     display: flex;
     gap: 16px;
-    margin-bottom: 302px;
+    margin-bottom: 104px;
 
     @media (width > 376px) {
       padding-block: 110px;
@@ -32,7 +30,6 @@
     }
 
     @media (width <= 376px) {
-      margin-bottom: 104px;
       overflow: scroll;
       gap: 16px;
       padding-left: 20px;

@@ -1,0 +1,142 @@
+#footer {
+  height: 415px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../assets/images/book-trace-background.png);
+
+  padding-top: 170px;
+  padding-inline: 160px;
+  padding-bottom: 102px;
+
+  display: flex;
+  justify-content: space-between;
+  
+  @media (width <= 376px) {
+    background-image: url(../assets/images/book-trace-background-mobile.png);
+    padding-top: 98px;
+    padding-inline: 32px;
+    padding-bottom: 38px;
+    flex-direction: column;
+  }
+
+  & .links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 264px;
+
+    @media (width <=376px) {
+      width: 311px;
+    }
+
+    & img.footer-logo {
+      align-self: center;
+      width: 264px;
+      height: 66px;
+  
+      @media (width <= 376px) {
+        width: 158px;
+        height: 40px;
+      }
+    }
+
+    & .divider {
+      border: 1px solid var(--shape-stroke);
+    }
+
+    & .social {
+      display: flex;
+      justify-content: space-between;
+
+      & .svg-container {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5rem;
+
+        transition: background-color;
+        transition-duration: 500ms;
+
+        &:hover {
+          background-color: var(--shape-stroke);
+
+          & svg {
+            fill: var(--text-title);
+          }
+        }
+
+        & svg {
+          height: 20px;
+          width: 20px;
+          fill: var(--blue-base);
+          z-index: 1;
+          transition: fill;
+          transition-duration: 500ms;
+        }
+      }
+    }
+  }
+
+  & .brand {
+    display: flex;
+    gap: 56px;
+    padding-top: 8px;
+    width: 312px;
+
+    @media (width <= 376px) {
+      gap: 24px;
+    }
+
+    & .titlexs {
+      font-weight: 700;
+      line-height: 19px;
+      color: var(--text-body);
+    }
+
+    & .content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      & .content-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        
+        & a {
+          cursor: default;
+          transition-property: color;
+          transition-duration: 0.3s;
+        }
+        & a:hover {
+          color: var(--text-body);
+        }
+      }
+    }
+
+    & .help {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      & .help-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        & a {
+          cursor: default;
+          transition-property: color;
+          transition-duration: 0.3s;
+        }
+        & a:hover {
+          color: var(--text-body);
+        }
+      }
+    }
+  }
+}
